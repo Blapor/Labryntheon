@@ -4,16 +4,31 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import maze.CharacterInfo;
+import maze.Character;
 import maze.Main;
 import maze.Player;
 
-/**
- *
- * @author Alex
- */
 public class GameState extends State {
-
+	
+	private long lastSpawn, spawnTimer = lastSpawn, spawnCooldown = 2000;
+	private int iter = 0;
+	private Player player;
+	private Character pc;
+	private Main main;
+	
+	public GameState(Main main) {
+        super(main);
+        this.main = main;
+        player = main.getPlayer();
+        pc = main.getCharacter();
+	}
+	
+	public void update() {
+		while(pc.getdistToEnd() != (int)0) {
+			
+		}
+	}
+	/*
     public static double k = 8987552787.37;
     public static double e = -1.60217662 * Math.pow(10, -19);
 
@@ -141,4 +156,5 @@ public class GameState extends State {
         }
         main.setScore(0);
     }
+    */
 }

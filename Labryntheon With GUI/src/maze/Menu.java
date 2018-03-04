@@ -1,7 +1,9 @@
 package maze;
 
-
 public class Menu{
+	
+	//THIS CLASS IS UNUSED, MAY REMOVE LATER
+	
     private static int[] save = new int[13];                                                                        //The Save. This is important.
     public Menu(){                                                                                                  //Constructor
         System.out.println("Menu Options:\nNew Game\nLoad Save\nHow to Play\nCredits\n");
@@ -31,7 +33,7 @@ public class Menu{
         save[2] = (int)(Math.random()*21);                              //player X position
         save[3] = (int)(Math.random()*21);                              //player Y position
         save[4] = (int)(Math.random()*3);                               //player Z position
-        save[5] = 0;                                                    //player level
+        save[5] = 0;                                                    //player experience
         save[6] = 100;                                                  //player health
         save[7] = (int)(Math.random()*21);                              //exit X position
         while(-3 <= save[7]-save[2] && save[7]-save[2] <= 3){
@@ -44,9 +46,9 @@ public class Menu{
         save[9] = (int)(Math.random()*3);                               //exit Z position
         System.out.println("Difficulty:\nEasy\nMedium\nMLG");           //difficulty
         String diff = Inputter.consoleInput().toLowerCase();
-        if(diff.equals("Easy"))
+        if(diff.equalsIgnoreCase("Easy"))
             save[10] = 0;
-        else if(diff.equals("Medium"))
+        else if(diff.equalsIgnoreCase("Medium"))
             save[10] = 1;
         else if(diff.equalsIgnoreCase("MLG"))
             save[10] = 2;
